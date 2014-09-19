@@ -1,7 +1,7 @@
 vuze-systemd
 ============
 
-# Vuze Service Script for systemd
+Vuze Service Script for systemd
 
 ## vuze.service
 * systemd service file
