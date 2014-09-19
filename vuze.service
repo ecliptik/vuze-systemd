@@ -1,0 +1,17 @@
+[Unit]
+Description=Vuze Bittorrent Daemon
+After=network.target syslog.target
+
+[Service]
+Type=simple
+User=vuze
+Group=vuze
+EnvironmentFile=/etc/default/vuze
+ExecStart=/usr/bin/java $JAVA_OPTS -jar $VUZE_JAR $VUZE_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=azureus.service
